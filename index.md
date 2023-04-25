@@ -107,10 +107,10 @@ static int[] reversed(int[] arr) {
 ```java
 @Test
   public void testReversed() {
-    int[] input1 = {};
+    int[] input1 = {}; 
     assertArrayEquals(new int[]{}, ArrayExamples.reversed(input1));
     
-    int[] input2 = {1, 2, 3};
+    int[] input2 = {1, 2, 3}; // failure inducing input
     assertArrayEquals(new int[]{3, 2, 1}, ArrayExamples.reversed(input1));
   }
   ```
