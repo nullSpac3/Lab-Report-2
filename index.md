@@ -56,5 +56,8 @@ class StringServer {
 
 <details>
   <summary>Screenshots</summary>
-  
+![Image](Hello.png)	
+![Image](World!.png)	
 </details>
+
+
