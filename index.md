@@ -140,4 +140,4 @@ static int[] reversed(int[] arr) {
 ## Learning Outcome
 
 * Learning to create a server and handle URLs and requests was pretty insightful. Additionaly, the detailed breakdown of URLs shown in lecture and lab material helped me understand the functionality of starting a server. Lastly, debugging was a tiny bit complex and more challenging than other material, however, I feel it acts as reinforcement since it goes hand in hand with CSE 12. 
-* The code used for `StringServer.java` was repurposed from `NumberServer.java` (Lab 2)
+* **Note**: The code used for `StringServer.java` was repurposed from `NumberServer.java` (Lab 2)
