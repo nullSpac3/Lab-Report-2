@@ -1,8 +1,6 @@
 ## StringServer.java 
 
-<details>
-  <summary>Click to view code!</summary>
-<br/>
+
 
 ```java
 import java.io.IOException;
@@ -51,11 +49,9 @@ class StringServer {
 }
 ```
 
-</details>
+<br>
 
-<details>
-  <summary>Click to view code!</summary>  
-  <br> 
+## ScreenShots
   
 ![Image](Hello.png)	
 
@@ -88,7 +84,7 @@ class StringServer {
 <br>
 Once the server is up and running, any *viable* update to the url will append the desired query to the local variable `str` of that specific instance of the server. As in once `Ctrl + C` is run in the bash terminal, the server shuts down and `str` is rid of its contents.
 
-  </details>
+<br> 
 
 ## Lab 3 Bug 🐜
 
