@@ -102,6 +102,7 @@ static int[] reversed(int[] arr) {
     return arr;
   }
 ```
+<br>
 
 `Tests`
 ```java
@@ -114,4 +115,32 @@ static int[] reversed(int[] arr) {
     assertArrayEquals(new int[]{3, 2, 1}, ArrayExamples.reversed(input1));
   }
   ```
+ <br>
+ 
+`Symptom`
 
+![Image](JUnit.png)
+
+<br>
+
+`Fix`
+
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    int index = 0;
+    for(int i = arr.length - 1; i >= 0; i--) {
+      newArray[index] = arr[i];
+      index++;
+    }
+    return newArray;
+  }
+  ```
+  
+  <br>
+
+* The buggy code fails to reverse an array with 3 elements, as shown in the JUnit tests. The issue lies with the indexing. A simple fix would be to loop from the back of the array and assign those respective elements to a new array of the same length that loops from the front. 
+
+## Learning Outcome
+
+* Learning to create a server and handle URLs and requests was pretty insightful. Additionaly, the detailed breakdown of URLs shown in lecture and lab material helped me understand the functionality of starting a server. Lastly, debugging was a tiny bit complex and more challenging than other material, however, I feel it acts as reinforcement since it goes hand in hand with CSE 12. 
