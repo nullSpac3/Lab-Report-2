@@ -53,8 +53,9 @@ class StringServer {
 
 </details>
 
-
-<br>
+<details>
+  <summary>Click to view code!</summary>  
+  <br> 
   
 ![Image](Hello.png)	
 
@@ -87,5 +88,30 @@ class StringServer {
 <br>
 Once the server is up and running, any *viable* update to the url will append the desired query to the local variable `str` of that specific instance of the server. As in once `Ctrl + C` is run in the bash terminal, the server shuts down and `str` is rid of its contents.
 
+  </details>
 
+## Lab 3 Bug 🐜
+
+`Buggy Code`
+```java
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
+
+`Tests`
+```java
+@Test
+  public void testReversed() {
+    int[] input1 = {};
+    assertArrayEquals(new int[]{}, ArrayExamples.reversed(input1));
+    
+    int[] input2 = {1, 2, 3};
+    assertArrayEquals(new int[]{3, 2, 1}, ArrayExamples.reversed(input1));
+  }
+  ```
 
