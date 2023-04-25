@@ -1,4 +1,4 @@
-## StringServer.java Code
+## StringServer.java 
 
 <details>
   <summary>Click to view code!</summary>
@@ -17,9 +17,8 @@ import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.net.URI;
 
-class Handler implements URLHandler {
-    // The one bit of state on the server: a number that will be manipulated by
-    // various requests.
+class StringHandler implements URLHandler {
+    // String that stores the messages added
     String str = "";
 
     public String handleRequest(URI url) {
@@ -47,17 +46,46 @@ class StringServer {
 
         int port = Integer.parseInt(args[0]);
 
-        Server.start(port, new Handler());
+        Server.start(port, new StringHandler());
     }
 }
 ```
 
 </details>
 
-<details>
-  <summary>Screenshots</summary>
+
+<br>
+  
 ![Image](Hello.png)	
+
+ The following combination of methods and arguments are called in the given order:
+  
+  `main(["4000"]) ` 
+  
+  * `Integer.parseInt("4000")` 
+  
+  * `Server.start(4000, new StringHandler())` 
+  
+  `handleRequest("localhost:4000/add-message?s=Hello")`
+  
+  * `url.getPath().equals("/") //evaluates to false`
+  
+  * `url.getPath().equals("/add-message") //evaluates to true` 
+
+  <br> <br>
+  
 ![Image](World!.png)	
-</details>
+  
+   Since the server is already running and `main()` method already called, any url update is simply rerouted to the `handleRequest()` method
+  
+  `handleRequest("localhost:4000/add-message?s=World!")`
+  
+  * `url.getPath().equals("/") //evaluates to false`
+  
+  * `url.getPath().equals("/add-message") //evaluates to true`
+
+<br>
+Once the server is up and running, any *viable* update to the url will append the desired query to the local variable `str` of that specific instance of the server. As in once `Ctrl + C` is typed, the server shuts down and the `str` is rid of its contents.
+
 
 
