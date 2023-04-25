@@ -66,7 +66,7 @@ class StringServer {
   
   * `Server.start(4000, new StringHandler())` 
   
-  `handleRequest("localhost:4000/add-message?s=Hello")`
+  `handleRequest(new URI("localhost:4000/add-message?s=Hello"))`
   
   * `url.getPath().equals("/") //evaluates to false`
   
@@ -78,14 +78,14 @@ class StringServer {
   
    Since the server is already running and `main()` method already called, any url update is simply rerouted to the `handleRequest()` method
   
-  `handleRequest("localhost:4000/add-message?s=World!")`
+  `handleRequest(new URI("localhost:4000/add-message?s=World!"))`
   
   * `url.getPath().equals("/") //evaluates to false`
   
   * `url.getPath().equals("/add-message") //evaluates to true`
 
 <br>
-Once the server is up and running, any *viable* update to the url will append the desired query to the local variable `str` of that specific instance of the server. As in once `Ctrl + C` is typed, the server shuts down and the `str` is rid of its contents.
+Once the server is up and running, any *viable* update to the url will append the desired query to the local variable `str` of that specific instance of the server. As in once `Ctrl + C` is run in the bash terminal, the server shuts down and `str` is rid of its contents.
 
 
 
